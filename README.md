@@ -1,6 +1,6 @@
 <h1 align="center">Boilerplate Repository <br> Future Projects 🚀 </h1>
 
-<div id="badges">
+<div align="center" id="badges">
 <br/>
 <a href="">
 	<img src="https://img.shields.io/badge/documentation-docs-orange" alt="Documentation"/>
@@ -15,10 +15,6 @@
   <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="Code Style - Prettier"/>
  </a>
 <br/>
- <a href="">
-  <img src="https://wakatime.com/badge/github/vikiru/boilerplate.svg"
-  alt="Wakatime Coding Stats for "/>
- </a>
   <a href="https://github.com/vikiru/boilerplate/releases">
   <img src="https://img.shields.io/github/v/release/vikiru/boilerplate" alt="Release"/>
  </a>
