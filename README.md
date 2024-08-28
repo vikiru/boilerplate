@@ -1,1 +1,1 @@
-# js-boilerplate
+# Boilerplate Repoistory for Future Projects :rocket:
