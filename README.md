@@ -28,7 +28,7 @@
 
 ---
 
-This repository is a boilerplate repostiory for future GitHub projects.
+This repository is a boilerplate repository for future GitHub projects.
 
 ## 📖 Table of Contents
 
