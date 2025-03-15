@@ -1,6 +1,6 @@
 <h1 align="center">Boilerplate Repository <br> Future Projects 🚀 </h1>
 
-<div align="center" id="badges">
+<div align="left" id="badges">
 <br/>
 <a href="">
 	<img src="https://img.shields.io/badge/documentation-docs-orange" alt="Documentation"/>
@@ -28,7 +28,7 @@
 
 ---
 
-This repository is a boilerplate repository for future GitHub projects.
+This repository is a boilerplate for future GitHub projects.
 
 ## 📖 Table of Contents
 
