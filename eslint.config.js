@@ -71,7 +71,7 @@ export default tseslint.config(
             'perfectionist/sort-object-types': 'off',
         },
 
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     },
     globalIgnores([
         'node_modules/**/*',
