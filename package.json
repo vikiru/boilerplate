@@ -1,19 +1,19 @@
 {
     "name": "boilerplate",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "",
     "author": "",
     "type": "module",
     "private": true,
     "license": "MIT",
     "keywords": [],
-    "homepage": "",
+    "homepage": "https://github.com/<user>/<repo_name>#readme",
     "repository": {
         "type": "git",
-        "url": "git+https:/github.com/<user>/<repo_name>"
+        "url": "git+https://github.com/<user>/<repo_name>"
     },
     "bugs": {
-        "url": ""
+        "url": "https://github.com/<user>/<repo_name>/issues"
     },
     "scripts": {
         "build": "tsc",
