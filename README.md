@@ -1,7 +1,6 @@
 <h1 align="center">Boilerplate Repository <br> Future Projects 🚀 </h1>
 
 <div align="left" id="badges">
-<br/>
 <a href="">
 	<img src="https://img.shields.io/badge/documentation-docs-orange" alt="Documentation"/>
 </a>
@@ -14,7 +13,6 @@
  <a href="https://github.com/prettier/prettier">
   <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="Code Style - Prettier"/>
  </a>
-<br/>
   <a href="https://github.com/vikiru/boilerplate/releases">
   <img src="https://img.shields.io/github/v/release/vikiru/boilerplate" alt="Release"/>
  </a>
