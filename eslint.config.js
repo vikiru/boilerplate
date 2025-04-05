@@ -76,6 +76,7 @@ export default tseslint.config(
     globalIgnores([
         'node_modules/**/*',
         '.github/**/*',
+        '.husky/**/*',
         '.next/**/*',
         'public/**/*',
         'build/**/*',

@@ -5,8 +5,12 @@ build/
 next/
 node_modules/
 public/
+dist/
 .prettierignore
 .gitignore
 .gitattributes
 LICENSE
 *.ico
+package-lock.json
+.env
+.env.*
