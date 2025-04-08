@@ -3,18 +3,9 @@
     "version": "0.1.0",
     "description": "",
     "author": "",
-    "type": "module",
     "private": true,
     "license": "MIT",
     "keywords": [],
-    "homepage": "https://github.com/<user>/<repo_name>#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/<user>/<repo_name>"
-    },
-    "bugs": {
-        "url": "https://github.com/<user>/<repo_name>/issues"
-    },
     "scripts": {
         "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -63,12 +54,6 @@
         "typescript": "^5.5.4",
         "typescript-eslint": "^8.26.1"
     },
-    "lint-staged": {
-        "*.{js,mjs,cjs,ts,jsx,tsx}": [
-            "npm run lint",
-            "npm run prettier"
-        ]
-    },
     "release": {
         "branches": [
             "main"
@@ -80,8 +65,5 @@
             "@semantic-release/git",
             "@semantic-release/github"
         ]
-    },
-    "engines": {
-        "node": ">=16.9"
     }
 }
