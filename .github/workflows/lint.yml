@@ -1,29 +1,32 @@
 name: Lint Files
-run-name: Lint files using ESLint
+run-name: Lint files using Biome
 on:
   pull_request:
     branches:
       - main
-
+    paths:
+      - "src/**/*.{ts,tsx,js,jsx}"
+      - "test/**/*.{ts,tsx,js,jsx}"
+      - "package.json"
+      - "tsconfig.json"
 permissions:
   contents: write
   statuses: write
   actions: write
-
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
+          cache: "pnpm"
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Install dependencies
-        run: npm install
-
+        run: pnpm install
       - name: Lint files
-        run: npm run lint
+        run: pnpm lint
