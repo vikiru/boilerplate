@@ -1,5 +1,9 @@
 # Extra
 .clerk
+.astro
+.docusaurus
+dist
+build
 styles
 src/data/*
 src/logs/*
