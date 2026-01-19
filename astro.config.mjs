@@ -1,26 +1,97 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
+import starlightLinksValidatorPlugin from 'starlight-links-validator';
+import starlightThemeRapidePlugin from 'starlight-theme-rapide';
+import { documentationConfig } from './docs.config.ts';
 
-// https://astro.build/config
+const {
+  site: { title, base, siteUrl, projectDescription, documentationUrl, websiteLastModified },
+  assets: { faviconFileName },
+  project: { githubRepo },
+} = documentationConfig;
+
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  base: `${base}/`,
+  site: siteUrl,
+  output: 'static',
+  trailingSlash: 'never',
+  vite: {
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
+  },
+  integrations: [
+    starlight({
+      title,
+      tagline: projectDescription,
+      favicon: faviconFileName,
+      logo: {
+        src: './public/logo.png',
+        replacesTitle: true,
+      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: githubRepo,
+        },
+      ],
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 4,
+      },
+      sidebar: [
+        {
+          label: 'Getting Started',
+          items: [
+            { label: 'Introduction', link: '/' },
+            { label: 'Features', link: '/getting-started/features' },
+          ],
+        },
+        {
+          label: 'Development',
+          items: [
+            { label: 'Motivation', link: '/development/motivation' },
+            { label: 'Development Overview', link: '/development/development-overview' },
+            { label: 'Normalizing Data', link: '/development/normalize' },
+            { label: 'Data Clustering with K-means', link: '/development/kmeans' },
+            { label: 'Model Overview', link: '/development/model' },
+            { label: 'Prerequisites', link: '/development/prerequisites' },
+            { label: 'Setup', link: '/development/setup' },
+            { label: 'Tech Stack', link: '/development/tech-stack' },
+            { label: 'Available Scripts', link: '/development/scripts' },
+          ],
+        },
+        {
+          label: 'Conclusion',
+          autogenerate: { directory: 'conclusion' },
+        },
+      ],
+      components: {
+        Head: './src/components/Head.astro',
+      },
+      credits: true,
+      lastUpdated: false,
+      plugins: [
+        starlightLinksValidatorPlugin({
+          errorOnRelativeLinks: false,
+        }),
+        starlightThemeRapidePlugin(),
+      ],
+    }),
+    sitemap({
+      serialize(item) {
+        item.lastmod = websiteLastModified.toISOString();
+        item.changefreq = 'monthly';
+        item.priority = item.url === documentationUrl ? 1 : 0.7;
+        return item;
+      },
+    }),
+    (await import('@playform/compress')).default({
+      Image: false,
+    }),
+  ],
 });
