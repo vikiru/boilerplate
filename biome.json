@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -78,12 +78,14 @@
     "rules": {
       "recommended": true,
       "nursery": {
-        "recommended": false,
-        "noMagicNumbers": "off"
+        "recommended": false
       },
       "correctness": {
         "noUndeclaredDependencies": "off",
         "useImportExtensions": "off"
+      },
+      "style": {
+        "noMagicNumbers": "off"
       }
     }
   },
