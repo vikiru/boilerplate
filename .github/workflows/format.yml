@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "src/**/*.{ts,tsx,js,jsx}"
-      - "test/**/*.{ts,tsx,js,jsx}"
 permissions:
   contents: write
   statuses: write
@@ -24,11 +21,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install pnpm
-        run: npm install -g pnpm
+          node-version: "lts/*"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile # Install from frozen lockfile
       - name: Format files
         run: pnpm run format
       - name: Check for changes
@@ -49,4 +48,4 @@ jobs:
         if: steps.changes.outputs.changes_exist == 'true'
         run: |-
           git commit -m "chore: format files via github actions"
-          git push
+          git pushr
