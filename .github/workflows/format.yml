@@ -48,4 +48,4 @@ jobs:
         if: steps.changes.outputs.changes_exist == 'true'
         run: |-
           git commit -m "chore: format files via github actions"
-          git pushr
+          git push
