@@ -34,7 +34,7 @@
     "@types/react": "^19.2.18",
     "@typescript/native": "npm:typescript@^7.0.2",
     "dotenv": "^17.4.2",
-    "globals": "^16.5.0",
+    "globals": "^17.10.0",
     "knip": "^5.88.1",
     "ky": "^1.14.3",
     "lefthook": "^2.1.10",
