@@ -24,7 +24,7 @@
     "oxlint-tsgolint": "^7.0.2001"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
+    "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@semantic-release/git": "^10.0.1",
     "@tailwindcss/postcss": "^4.3.3",
